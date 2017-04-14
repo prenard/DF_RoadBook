@@ -3,12 +3,9 @@ using Toybox.Graphics as Gfx;
 
 class DF_RoadBookView extends Ui.DataField
 {
-	// from dev
-	
+		
 	var Device_Type;
-	
-	// from master
-	
+		
 	var Max_Display_Line_Number = 0;
 
     var Field_1_Description = null;
@@ -97,7 +94,7 @@ class DF_RoadBookView extends Ui.DataField
 		WayPoint_Array = new [50];
        	Line_Separator_Y = 93;
        	Max_Display_Line_Number = 9;
-		First_Line_Y = 115;
+		First_Line_Y = 110;
 		Line_Height = 30;
 	   }
 
