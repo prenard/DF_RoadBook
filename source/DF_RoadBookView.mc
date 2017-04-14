@@ -80,7 +80,6 @@ class DF_RoadBookView extends Ui.DataField
 		T = Args[0];
 		WayPoints_List = Args[1];
 
-
        if (Device_Type.equals("edge_820"))
        {
 		WayPoint_Array = new [50];
@@ -88,13 +87,13 @@ class DF_RoadBookView extends Ui.DataField
        	Max_Display_Line_Number = 5;
 		First_Line_Y = 95;
 		Line_Height = 30;
-	   }
+	   } else
        if (Device_Type.equals("edge_1000"))
        {
 		WayPoint_Array = new [50];
-       	Line_Separator_Y = 91;
+       	Line_Separator_Y = 93;
        	Max_Display_Line_Number = 9;
-		First_Line_Y = 105;
+		First_Line_Y = 110;
 		Line_Height = 30;
 	   }
 
@@ -118,7 +117,7 @@ class DF_RoadBookView extends Ui.DataField
 			WayPoints_List = WayPoints_List.substring(WayPoints_List.find(";")+1, WayPoints_List.length());
 		}
 
-		// System.println(WayPoint_Number);
+		//System.println(WayPoint_Number);
 		
 		/*
 		for (var i = 0; i < WayPoint_Number; ++i)
@@ -145,30 +144,6 @@ class DF_RoadBookView extends Ui.DataField
     	Field_3_Description = "Power Average";
     	Field_4_Description = "Heart Rate";
     	Field_5_Description = "Cadence";
-    	    	    	
-
-
-		//WayPoint_Array[0] = [00,"Point 0"];
-		//WayPoint_Array[1] = [5.3,"Point 1"];
-		//WayPoint_Array[2] = [15.2,"Point 2"];
-		//WayPoint_Array[3] = [35,"Point 3"];
-		//WayPoint_Array[4] = [45,"Point 4"];
-		//WayPoint_Array[5] = [55,"Point 5"];
-		//WayPoint_Array[6] = [65,"Point 6"];
-		//WayPoint_Array[7] = [75,"Point 7"];
-		//WayPoint_Array[8] = [85,"Point 8"];
-		//WayPoint_Array[9] = [95,"Point 9"];		
-		//WayPoint_Array[10] = [107,"Point 10"];
-		//WayPoint_Array[11] = [117,"Point 11"];
-				
-		//WayPoint_Number = 12;
-		
-		//for( var i = 0; i < Line_Array.size(); i += 1 )
-		//{
-		//	var Dict = { "identifier" => "Line", "locX" => 0, "locY" => 0, "width" => 10, "height" => 10 };
-    	//	Line_Array[i] =  new Drawable(Dict);
-		//}
-
 
     }
 
