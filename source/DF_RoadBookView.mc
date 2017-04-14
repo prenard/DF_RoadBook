@@ -3,6 +3,8 @@ using Toybox.Graphics as Gfx;
 
 class DF_RoadBookView extends Ui.DataField
 {
+	// from dev
+	
 	var Device_Type;
 	
 	// from master
