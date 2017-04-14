@@ -93,7 +93,7 @@ class DF_RoadBookView extends Ui.DataField
 		WayPoint_Array = new [50];
        	Line_Separator_Y = 93;
        	Max_Display_Line_Number = 9;
-		First_Line_Y = 110;
+		First_Line_Y = 115;
 		Line_Height = 30;
 	   }
 
