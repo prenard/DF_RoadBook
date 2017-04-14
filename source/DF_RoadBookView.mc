@@ -4,7 +4,9 @@ using Toybox.Graphics as Gfx;
 class DF_RoadBookView extends Ui.DataField
 {
 	var Device_Type;
-	// 
+	
+	// from master
+	
 	var Max_Display_Line_Number = 0;
 
     var Field_1_Description = null;
