@@ -21,11 +21,10 @@ class DF_RoadBookApp extends App.AppBase
     //! Return the initial view of your application here
     function getInitialView()
     {
-		var Args = new [3];
+		var Args = new [2];
 		
-		Args[0] = getProperty("App_Version");
-		Args[1] = getProperty("DF_Title");
-		Args[2] = getProperty("WayPoints_List");
+		Args[0] = getProperty("DF_Title");
+		Args[1] = getProperty("WayPoints_List");
 		
         return [ new DF_RoadBookView(Args) ];
     }

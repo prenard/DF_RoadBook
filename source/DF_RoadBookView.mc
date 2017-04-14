@@ -62,8 +62,8 @@ class DF_RoadBookView extends Ui.DataField
     var HeartRate_Value = 0;
     var Cadence_Value = 0;
 
-	var First_Line_Y = 105;
-	var Line_Height = 30;
+	var First_Line_Y = 0;
+	var Line_Height = 0;
 	var Line_Separator_Y = 0;
 
 	var WayPoint_Array;
@@ -77,22 +77,25 @@ class DF_RoadBookView extends Ui.DataField
 
 		var WayPoints_List, T, V;
 
-		V = Args[0];
-		T = Args[1];
-		WayPoints_List = Args[2];
+		T = Args[0];
+		WayPoints_List = Args[1];
 
 
-       if (Device_Type.equals("edge_520"))
+       if (Device_Type.equals("edge_820"))
        {
-		WayPoint_Array = new [15];
-       	Line_Separator_Y = 80;
-       	Max_Display_Line_Number = 6;
+		WayPoint_Array = new [50];
+       	Line_Separator_Y = 81;
+       	Max_Display_Line_Number = 5;
+		First_Line_Y = 95;
+		Line_Height = 30;
 	   }
        if (Device_Type.equals("edge_1000"))
        {
 		WayPoint_Array = new [50];
        	Line_Separator_Y = 91;
        	Max_Display_Line_Number = 9;
+		First_Line_Y = 105;
+		Line_Height = 30;
 	   }
 
 		for( var i = 0; i < WayPoint_Array.size(); i += 1 )
@@ -100,27 +103,30 @@ class DF_RoadBookView extends Ui.DataField
     		WayPoint_Array[i] = new [2];
 		}
 
+		//System.println("WayPoints List = " + WayPoints_List);
 
+		
 		while (WayPoints_List.find(";") != null)
 		{
-			//System.println(WayPoint_Number);
-			//System.println(WayPoints_List);
-			//System.println(WayPoints_List.find(";"));
+			// System.println("WP Number = " + WayPoint_Number);
+			// System.println(WayPoints_List);
+			// System.println(WayPoints_List.find(";"));
 			var WayPoint =  WayPoints_List.substring(0, WayPoints_List.find(";"));
-			//System.println(WayPoint);
+			// System.println("WayPoint = " + WayPoint);
 			WayPoint_Array[WayPoint_Number] = [WayPoint.substring(0,WayPoint.find(",")).toNumber(),WayPoint.substring(WayPoint.find(",")+1,WayPoint.length())];
 			WayPoint_Number++;
 			WayPoints_List = WayPoints_List.substring(WayPoints_List.find(";")+1, WayPoints_List.length());
 		}
 
-		System.println(WayPoint_Number);
+		// System.println(WayPoint_Number);
 		
+		/*
 		for (var i = 0; i < WayPoint_Number; ++i)
         {
 			System.println(WayPoint_Array[i][0]);
 			System.println(WayPoint_Array[i][1]);
 		}
-
+		*/
 	    
 	    Power_AVG_Duration = 3;
 
@@ -175,7 +181,7 @@ class DF_RoadBookView extends Ui.DataField
 
    	    var Label;
 
-       if (Device_Type.equals("edge_1000"))
+       if (Device_Type.equals("edge_820") or Device_Type.equals("edge_1000"))
        {
 	    	WayPoint_Distance_Label_Field = View.findDrawableById("WayPoint_Distance_Label");
     		WayPoint_Distance_Unit_Field = View.findDrawableById("WayPoint_Distance_Unit");
