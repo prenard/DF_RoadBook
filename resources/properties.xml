@@ -1,0 +1,25 @@
+<resources>
+	<properties>
+		<property id="App_Version" type="string">1.00</property>
+    	<property id="DF_Title" type="string">RoadBook</property>
+	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2</property>
+	</properties>
+
+	<strings>
+	    <string id="App_Version_Title">RoadBook DataField Version</string>
+    	<string id="DF_Title_Title">Data Field Title</string>
+	    <string id="WayPoints_List_Title">WayPoints List</string>
+	</strings>
+	
+	<settings>
+	    <setting propertyKey="@Properties.App_Version" title="@Strings.App_Version_Title">
+	        <settingConfig type="alphaNumeric" readonly="true" />
+	    </setting>
+	    <setting propertyKey="@Properties.DF_Title" title="@Strings.DF_Title_Title">
+	        <settingConfig type="alphaNumeric" readonly="true" />
+	    </setting>
+		    <setting propertyKey="@Properties.WayPoints_List" title="@Strings.WayPoints_List_Title">
+	        <settingConfig type="alphaNumeric" maxLength="4096" />
+	    </setting>
+	</settings>
+</resources>
