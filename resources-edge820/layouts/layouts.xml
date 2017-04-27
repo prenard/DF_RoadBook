@@ -17,8 +17,7 @@
         <label id="Field_5_Label" x="140" y="40" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
         <label id="Field_5_Unit" x="195" y="40" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_XTINY" />
         <label id="Field_5_Value" x="195" y="50" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_NUMBER_MILD" />
-        <label id="WayPoint_Distance_Label" x="1" y="83" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
-        <label id="WayPoint_Distance_Unit" x="52" y="83" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_XTINY" />
-        <label id="WayPoint_Comment_Label" x="57" y="83" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
+        <label id="WayPoint_Distance_Unit" x="32" y="83" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_XTINY" />
+        <label id="WayPoint_Comment_Label" x="35" y="83" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
     </layout>
 </layouts>

@@ -85,17 +85,17 @@ class DF_RoadBookView extends Ui.DataField
        {
 		WayPoint_Array = new [50];
        	Line_Separator_Y = 81;
-       	Max_Display_Line_Number = 5;
+       	Max_Display_Line_Number = 8;
 		First_Line_Y = 95;
-		Line_Height = 30;
+		Line_Height = 20;
 	   } else
        if (Device_Type.equals("edge_1000"))
        {
 		WayPoint_Array = new [50];
        	Line_Separator_Y = 93;
-       	Max_Display_Line_Number = 9;
-		First_Line_Y = 110;
-		Line_Height = 30;
+       	Max_Display_Line_Number = 14;
+		First_Line_Y = 105;
+		Line_Height = 20;
 	   }
 
 		for( var i = 0; i < WayPoint_Array.size(); i += 1 )
@@ -159,10 +159,10 @@ class DF_RoadBookView extends Ui.DataField
 
        if (Device_Type.equals("edge_820") or Device_Type.equals("edge_1000"))
        {
-	    	WayPoint_Distance_Label_Field = View.findDrawableById("WayPoint_Distance_Label");
+	    	//WayPoint_Distance_Label_Field = View.findDrawableById("WayPoint_Distance_Label");
     		WayPoint_Distance_Unit_Field = View.findDrawableById("WayPoint_Distance_Unit");
 	  		Label = "Dist:";
-			WayPoint_Distance_Label_Field.setText(Label);
+			//WayPoint_Distance_Label_Field.setText(Label);
 			if (System.getDeviceSettings().distanceUnits == System.UNIT_METRIC)
 				{
 					WayPoint_Distance_Unit = "km";
@@ -416,8 +416,8 @@ class DF_RoadBookView extends Ui.DataField
 			//System.println("WayPoint_Array_Idx = " + WayPoint_Array_Idx);
 			if (WayPoint_Array[WayPoint_Array_Idx][0] >= Distance_Value - 2)
 			{
-				dc.drawText(52, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_LARGE, WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
-				dc.drawText(57, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_LARGE, WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
+				dc.drawText(32, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_MEDIUM, WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
+				dc.drawText(35, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_MEDIUM, WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
 				Display_Line_Idx++;
 			}
 			WayPoint_Array_Idx++;
