@@ -1,11 +1,13 @@
 <resources>
 	<properties>
     	<property id="DF_Title" type="string">RoadBook</property>
+	    <property id="Set_RoadBook_Starting_Point" type="boolean">true</property>
 	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2;28,Point 3;</property>
 	</properties>
 
 	<strings>
     	<string id="DF_Title_Title">Data Field Title</string>
+    	<string id="Set_RoadBook_Starting_Point_Title">Set Roadbook Starting Point</string>
 	    <string id="WayPoints_List_Title">WayPoints List</string>
 	</strings>
 	
@@ -13,7 +15,10 @@
 	    <setting propertyKey="@Properties.DF_Title" title="@Strings.DF_Title_Title">
 	        <settingConfig type="alphaNumeric" readonly="true" />
 	    </setting>
-		    <setting propertyKey="@Properties.WayPoints_List" title="@Strings.WayPoints_List_Title">
+	    <setting propertyKey="@Properties.Set_RoadBook_Starting_Point" title="@Strings.Set_RoadBook_Starting_Point_Title">
+	        <settingConfig type="boolean"/>
+	    </setting>
+		<setting propertyKey="@Properties.WayPoints_List" title="@Strings.WayPoints_List_Title">
 	        <settingConfig type="alphaNumeric" maxLength="4096" />
 	    </setting>
 	</settings>
