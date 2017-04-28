@@ -5,8 +5,6 @@ using Toybox.Graphics as Gfx;
 class DF_RoadBookView extends Ui.DataField
 {
 	var My_App;
-	
-	var Device_Type;
 		
 	var Max_Display_Line_Number = 0;
 
@@ -69,35 +67,28 @@ class DF_RoadBookView extends Ui.DataField
 	var Line_Height = 0;
 	var Line_Separator_Y = 0;
 
-	//var WayPoint_Array;
-	var WayPoint_Number = 0;
-
-    function initialize(Args)
+    function initialize()
     {
        DataField.initialize();
 
        My_App = App.getApp();
         
-	   Device_Type = Ui.loadResource(Rez.Strings.Device);
-
-       if (Device_Type.equals("edge_820"))
+       if (My_App.Device_Type.equals("edge_820"))
        {
-		My_App.WayPoint_Array = new [50];
        	Line_Separator_Y = 81;
        	Max_Display_Line_Number = 8;
 		First_Line_Y = 95;
 		Line_Height = 20;
 	   } else
-       if (Device_Type.equals("edge_1000"))
+       if (My_App.Device_Type.equals("edge_1000"))
        {
-		My_App.WayPoint_Array = new [50];
        	Line_Separator_Y = 93;
        	Max_Display_Line_Number = 14;
 		First_Line_Y = 105;
 		Line_Height = 20;
 	   }
 
-		Generate_Waypoint_Array(Args);
+		//My_App.Generate_Waypoint_Array(Args);
 	    
 	    Power_AVG_Duration = 3;
 
@@ -119,43 +110,6 @@ class DF_RoadBookView extends Ui.DataField
 
     }
 
-    function Generate_Waypoint_Array(Args)
-    {
-		var DF_Title, Set_RoadBook_Starting_Point_Flag, WayPoints_List;
-
-		DF_Title = Args[0];
-		Set_RoadBook_Starting_Point_Flag = Args[1];		
-		WayPoints_List = Args[2];
-
-		for( var i = 0; i < My_App.WayPoint_Array.size(); i += 1 )
-		{
-    		My_App.WayPoint_Array[i] = new [2];
-		}
-
-		//System.println("WayPoints List = " + WayPoints_List);
-		
-		while (WayPoints_List.find(";") != null)
-		{
-			// System.println("WP Number = " + WayPoint_Number);
-			// System.println(WayPoints_List);
-			// System.println(WayPoints_List.find(";"));
-			var WayPoint =  WayPoints_List.substring(0, WayPoints_List.find(";"));
-			// System.println("WayPoint = " + WayPoint);
-			My_App.WayPoint_Array[WayPoint_Number] = [WayPoint.substring(0,WayPoint.find(",")).toNumber(),WayPoint.substring(WayPoint.find(",")+1,WayPoint.length())];
-			WayPoint_Number++;
-			WayPoints_List = WayPoints_List.substring(WayPoints_List.find(";")+1, WayPoints_List.length());
-		}
-
-		//System.println(WayPoint_Number);
-		
-		/*
-		for (var i = 0; i < WayPoint_Number; ++i)
-        {
-			System.println(WayPoint_Array[i][0]);
-			System.println(WayPoint_Array[i][1]);
-		}
-		*/
-	}
 
     // Set your layout here. Anytime the size of obscurity of
     // the draw context is changed this will be called.
@@ -166,7 +120,7 @@ class DF_RoadBookView extends Ui.DataField
 
    	    var Label;
 
-       if (Device_Type.equals("edge_820") or Device_Type.equals("edge_1000"))
+       if (My_App.Device_Type.equals("edge_820") or My_App.Device_Type.equals("edge_1000"))
        {
 	    	//WayPoint_Distance_Label_Field = View.findDrawableById("WayPoint_Distance_Label");
     		WayPoint_Distance_Unit_Field = View.findDrawableById("WayPoint_Distance_Unit");
@@ -416,10 +370,11 @@ class DF_RoadBookView extends Ui.DataField
         dc.setColor( Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT );
         dc.drawLine(0, Line_Separator_Y, 250, Line_Separator_Y);
 
-
+		//System.println("Before Display");
+			
 		var WayPoint_Array_Idx = 0;
 		var Display_Line_Idx = 0;
-		while ( (Display_Line_Idx < Max_Display_Line_Number) and (WayPoint_Array_Idx < WayPoint_Number) )
+		while ( (Display_Line_Idx < Max_Display_Line_Number) and (WayPoint_Array_Idx < My_App.WayPoint_Number) )
 		{
 			//System.println("Display_Line_Idx = " + Display_Line_Idx);
 			//System.println("WayPoint_Array_Idx = " + WayPoint_Array_Idx);
