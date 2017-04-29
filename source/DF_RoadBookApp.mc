@@ -60,25 +60,32 @@ class DF_RoadBookApp extends App.AppBase
 		
 		var elapse_distance;
 
-		System.println("Distance = " + Act.getActivityInfo().elapsedDistance);
-		
-		elapse_distance = Act.getActivityInfo().elapsedDistance;
-		
-		if (elapse_distance == null)
+		if (Args[1])
 		{
-			elapse_distance = 0;
-		}
+			System.println("Distance = " + Act.getActivityInfo().elapsedDistance);
 		
-		elapse_distance = elapse_distance / 1000;
-		if (System.getDeviceSettings().distanceUnits == System.UNIT_STATUTE)
-		{
-			var km_mi_conv = 0.621371;
-			elapse_distance = elapse_distance * km_mi_conv;
-		}
+			elapse_distance = Act.getActivityInfo().elapsedDistance;
 		
+			if (elapse_distance == null)
+			{
+				elapse_distance = 0;
+			}
 		
+			elapse_distance = elapse_distance / 1000;
+			if (System.getDeviceSettings().distanceUnits == System.UNIT_STATUTE)
+			{
+				var km_mi_conv = 0.621371;
+				elapse_distance = elapse_distance * km_mi_conv;
+			}
+    	}
+    	else
+    	{
+    		elapse_distance = 0;
+    	}
+
 		Generate_Waypoint_Array(Args,elapse_distance);
-    }
+
+	}
 
     function Generate_Waypoint_Array(Args,start_elapse_distance)
     {

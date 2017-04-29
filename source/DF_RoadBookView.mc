@@ -7,6 +7,9 @@ class DF_RoadBookView extends Ui.DataField
 	var My_App;
 		
 	var Max_Display_Line_Number = 0;
+	var Font_Type;
+	var X_Distance;
+	var X_Comment;
 
     var Field_1_Description = null;
     var Field_1_Label_Field = null;
@@ -77,15 +80,27 @@ class DF_RoadBookView extends Ui.DataField
        {
        	Line_Separator_Y = 81;
        	Max_Display_Line_Number = 8;
+		Font_Type = Gfx.FONT_MEDIUM;
 		First_Line_Y = 95;
 		Line_Height = 20;
 	   } else
        if (My_App.Device_Type.equals("edge_1000"))
        {
        	Line_Separator_Y = 93;
-       	Max_Display_Line_Number = 14;
 		First_Line_Y = 105;
-		Line_Height = 20;
+	
+       	//Max_Display_Line_Number = 14;
+		//Font_Type = Gfx.FONT_MEDIUM;
+		//Line_Height = 20;
+		//X_Distance = 32;
+		//X_Comment = 35;
+
+       	Max_Display_Line_Number = 9;
+		Font_Type = Gfx.FONT_LARGE;
+		Line_Height = 30;
+		X_Distance = 45;
+		X_Comment = 50;
+
 	   }
 
 		//My_App.Generate_Waypoint_Array(Args);
@@ -380,8 +395,8 @@ class DF_RoadBookView extends Ui.DataField
 			//System.println("WayPoint_Array_Idx = " + WayPoint_Array_Idx);
 			if (My_App.WayPoint_Array[WayPoint_Array_Idx][0] >= Distance_Value - 2)
 			{
-				dc.drawText(32, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_MEDIUM, My_App.WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
-				dc.drawText(35, First_Line_Y + Display_Line_Idx * Line_Height, Gfx.FONT_MEDIUM, My_App.WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
+				dc.drawText(X_Distance, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, My_App.WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
+				dc.drawText(X_Comment, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, My_App.WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
 				Display_Line_Idx++;
 			}
 			WayPoint_Array_Idx++;
