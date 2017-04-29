@@ -4,7 +4,7 @@
         <drawable class="Background" />
         <label id="Field_1_Label" x="1" y="1" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
         <label id="Field_1_Unit" x="40" y="1" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_XTINY" />
-        <label id="Field_1_Value" x="80" y="11" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_NUMBER_MEDIUM"/>
+        <label id="Field_1_Value" x="95" y="11" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_NUMBER_MEDIUM"/>
         <label id="Field_2_Label" x="120" y="1" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_LEFT" font="Gfx.FONT_XTINY" />
         <label id="Field_2_Unit" x="100" y="1" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_XTINY" />
         <label id="Field_2_Value" x="237" y="11" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_RIGHT" font="Gfx.FONT_NUMBER_MEDIUM"/>
