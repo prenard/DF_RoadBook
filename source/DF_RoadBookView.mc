@@ -332,7 +332,6 @@ class DF_RoadBookView extends Ui.DataField
             Field_5_Label_Field.setColor(Gfx.COLOR_WHITE);
             Field_5_Unit_Field.setColor(Gfx.COLOR_WHITE);
             Field_5_Value_Field.setColor(Gfx.COLOR_WHITE);
-
         }
         else
         {
@@ -355,7 +354,6 @@ class DF_RoadBookView extends Ui.DataField
             Field_5_Label_Field.setColor(Gfx.COLOR_BLACK);
             Field_5_Unit_Field.setColor(Gfx.COLOR_BLACK);
             Field_5_Value_Field.setColor(Gfx.COLOR_BLACK);
-
         }
 
 		//Distance_Value = 999.9;
@@ -392,7 +390,16 @@ class DF_RoadBookView extends Ui.DataField
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
 
-        dc.setColor( Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT );
+        if (getBackgroundColor() == Gfx.COLOR_BLACK)
+        {
+        	dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
+        }
+		else
+        {
+        	dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
+        }
+
+        //dc.setColor( Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT );
         dc.drawLine(0, Line_Separator_Y, 250, Line_Separator_Y);
 
 		//System.println("Before Display");

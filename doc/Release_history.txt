@@ -6,6 +6,7 @@ Format of way points list is:
 
 
 Release History:
-
+- V1.01 - 2016-05-05
+* Fix Black / White Background problem
 - V1.00 - 2016-04-30
 * Original version
