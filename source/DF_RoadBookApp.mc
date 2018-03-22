@@ -16,19 +16,31 @@ class DF_RoadBookApp extends App.AppBase
 			
     function initialize()
     {
-       AppBase.initialize();
+		AppBase.initialize();
+		var DeviceSettings = System.getDeviceSettings();
+		
+		Device_Type = Ui.loadResource(Rez.Strings.Device);
 
-	   Device_Type = Ui.loadResource(Rez.Strings.Device);
+		System.println("Device Type = " + Device_Type);
+		System.println("Device - Screen Height = " + DeviceSettings.screenHeight);
+		System.println("Device - Screen Width = " + DeviceSettings.screenWidth);
+ 		System.println("Device - Is Touchscreen = " + DeviceSettings.isTouchScreen);
 	   
-       if (Device_Type.equals("edge_820"))
-       {
+		if (Device_Type.equals("edge_820"))
+		{
 			WayPoint_Array = new [50];
-	   } else
-       if (Device_Type.equals("edge_1000"))
-       {
+		}
+		else
+		if (Device_Type.equals("edge_1000"))
+		{
 			WayPoint_Array = new [50];
-	   }
-    }
+		}
+		else
+		if (Device_Type.equals("edge_1030"))
+		{
+			WayPoint_Array = new [50];
+		}
+	}
 
     // onStart() is called on application start up
     function onStart(state)
@@ -124,13 +136,13 @@ class DF_RoadBookApp extends App.AppBase
 
 		//System.println(WayPoint_Number);
 		
-		
+		/*
 		for (var i = 0; i < WayPoint_Number; ++i)
         {
 			System.println(WayPoint_Array[i][0]);
 			System.println(WayPoint_Array[i][1]);
 		}
-		
+		*/
 	}
 
 

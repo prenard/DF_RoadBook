@@ -80,12 +80,6 @@ class DF_RoadBookView extends Ui.DataField
        {
        	Line_Separator_Y = 81;
 		First_Line_Y = 95;
-		
-       	//Max_Display_Line_Number = 8;
-		//Font_Type = Gfx.FONT_MEDIUM;
-		//Line_Height = 20;
-		//X_Distance = 32;
-		//X_Comment = 35;
 
        	Max_Display_Line_Number = 5;
 		Font_Type = Gfx.FONT_LARGE;
@@ -93,19 +87,27 @@ class DF_RoadBookView extends Ui.DataField
 		X_Distance = 45;
 		X_Comment = 50;
 
-	   } else
+	   }
+	   else
        if (My_App.Device_Type.equals("edge_1000"))
        {
        	Line_Separator_Y = 93;
 		First_Line_Y = 105;
 	
-       	//Max_Display_Line_Number = 14;
-		//Font_Type = Gfx.FONT_MEDIUM;
-		//Line_Height = 20;
-		//X_Distance = 32;
-		//X_Comment = 35;
-
        	Max_Display_Line_Number = 9;
+		Font_Type = Gfx.FONT_LARGE;
+		Line_Height = 30;
+		X_Distance = 45;
+		X_Comment = 50;
+
+	   }
+	   else
+       if (My_App.Device_Type.equals("edge_1030"))
+       {
+       	Line_Separator_Y = 93;
+		First_Line_Y = 105;
+
+       	Max_Display_Line_Number = 11;
 		Font_Type = Gfx.FONT_LARGE;
 		Line_Height = 30;
 		X_Distance = 45;
@@ -400,7 +402,7 @@ class DF_RoadBookView extends Ui.DataField
         }
 
         //dc.setColor( Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT );
-        dc.drawLine(0, Line_Separator_Y, 250, Line_Separator_Y);
+        dc.drawLine(0, Line_Separator_Y, System.getDeviceSettings().screenWidth, Line_Separator_Y);
 
 		//System.println("Before Display");
 			

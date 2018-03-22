@@ -2,7 +2,7 @@
 	<properties>
     	<property id="DF_Title" type="string">RoadBook</property>
 	    <property id="Set_RoadBook_Starting_Point" type="boolean">true</property>
-	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2;28,Point 3;</property>
+	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2;3,Point 3;4,Point 4;5,Point 5;6,Point 6;7,Point 7;8,Point 8;9,Point 9;10,Point 10;</property>
 	</properties>
 
 	<strings>
