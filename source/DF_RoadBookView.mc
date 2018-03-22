@@ -104,7 +104,7 @@ class DF_RoadBookView extends Ui.DataField
 	   else
        if (My_App.Device_Type.equals("edge_1030"))
        {
-       	Line_Separator_Y = 93;
+       	Line_Separator_Y = 100;
 		First_Line_Y = 105;
 
        	Max_Display_Line_Number = 11;
