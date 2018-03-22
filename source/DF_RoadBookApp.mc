@@ -1,3 +1,9 @@
+// 
+// Prod id = 09544556A17441A0A7F600153B9C6113
+// Dev id  = 6e0d536d82784d20aa253ee9acaf716d
+//
+
+
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.Activity as Act;
