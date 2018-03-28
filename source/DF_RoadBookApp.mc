@@ -25,7 +25,7 @@ class DF_RoadBookApp extends App.AppBase
 		System.println("Device - Screen Height = " + DeviceSettings.screenHeight);
 		System.println("Device - Screen Width = " + DeviceSettings.screenWidth);
  		System.println("Device - Is Touchscreen = " + DeviceSettings.isTouchScreen);
-	   
+
 		if (Device_Type.equals("edge_820"))
 		{
 			WayPoint_Array = new [50];

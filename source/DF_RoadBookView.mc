@@ -75,7 +75,7 @@ class DF_RoadBookView extends Ui.DataField
        DataField.initialize();
 
        My_App = App.getApp();
-        
+       
        if (My_App.Device_Type.equals("edge_820"))
        {
        	Line_Separator_Y = 81;
@@ -86,7 +86,6 @@ class DF_RoadBookView extends Ui.DataField
 		Line_Height = 30;
 		X_Distance = 45;
 		X_Comment = 50;
-
 	   }
 	   else
        if (My_App.Device_Type.equals("edge_1000"))
@@ -105,11 +104,11 @@ class DF_RoadBookView extends Ui.DataField
        if (My_App.Device_Type.equals("edge_1030"))
        {
        	Line_Separator_Y = 105;
-		First_Line_Y = 105;
+		First_Line_Y = 115;
 
-       	Max_Display_Line_Number = 11;
-		Font_Type = Gfx.FONT_MEDIUM;
-		Line_Height = 30;
+       	Max_Display_Line_Number = 9;
+		Font_Type = Gfx.FONT_LARGE;
+		Line_Height = 35;
 		X_Distance = 60;
 		X_Comment = 65;
 
@@ -147,26 +146,20 @@ class DF_RoadBookView extends Ui.DataField
 
    	    var Label;
 
-       if (My_App.Device_Type.equals("edge_820") or My_App.Device_Type.equals("edge_1000"))
-       {
-	    	//WayPoint_Distance_Label_Field = View.findDrawableById("WayPoint_Distance_Label");
-    		WayPoint_Distance_Unit_Field = View.findDrawableById("WayPoint_Distance_Unit");
-	  		Label = "Dist:";
-			//WayPoint_Distance_Label_Field.setText(Label);
-			if (System.getDeviceSettings().distanceUnits == System.UNIT_METRIC)
-				{
-					WayPoint_Distance_Unit = "km";
-				}
-				else
-				{
-					WayPoint_Distance_Unit = "mi";
-				}
-			WayPoint_Distance_Unit_Field.setText(WayPoint_Distance_Unit);
-
-			WayPoint_Comment_Label_Field = View.findDrawableById("WayPoint_Comment_Label");
-			Label = "Comment";
-			WayPoint_Comment_Label_Field.setText(Label);
+   		WayPoint_Distance_Unit_Field = View.findDrawableById("WayPoint_Distance_Unit");
+  		Label = "Dist:";
+		if (System.getDeviceSettings().distanceUnits == System.UNIT_METRIC)
+		{
+			WayPoint_Distance_Unit = "km";
 		}
+		else
+		{
+			WayPoint_Distance_Unit = "mi";
+		}
+		WayPoint_Distance_Unit_Field.setText(WayPoint_Distance_Unit);
+		WayPoint_Comment_Label_Field = View.findDrawableById("WayPoint_Comment_Label");
+		Label = "Comment";
+		WayPoint_Comment_Label_Field.setText(Label);
 
     	Field_1_Label_Field = View.findDrawableById("Field_1_Label");
     	Field_1_Unit_Field = View.findDrawableById("Field_1_Unit");
