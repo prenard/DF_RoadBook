@@ -6,6 +6,8 @@ Format of way points list is:
 
 
 Release History:
+- V1.12 - 2018-03-28
+* Fix Edge 1030 display
 - V1.10 - 2018-03-22
 * Add Edge 1030 support
 - V1.01 - 2016-05-05

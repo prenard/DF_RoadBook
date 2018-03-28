@@ -104,14 +104,14 @@ class DF_RoadBookView extends Ui.DataField
 	   else
        if (My_App.Device_Type.equals("edge_1030"))
        {
-       	Line_Separator_Y = 100;
+       	Line_Separator_Y = 105;
 		First_Line_Y = 105;
 
        	Max_Display_Line_Number = 11;
-		Font_Type = Gfx.FONT_LARGE;
+		Font_Type = Gfx.FONT_MEDIUM;
 		Line_Height = 30;
-		X_Distance = 45;
-		X_Comment = 50;
+		X_Distance = 60;
+		X_Comment = 65;
 
 	   }
 
