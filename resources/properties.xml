@@ -1,17 +1,22 @@
 <resources>
 	<properties>
+		<property id="App_Version" type="string">0.00-00</property>
     	<property id="DF_Title" type="string">RoadBook</property>
 	    <property id="Set_RoadBook_Starting_Point" type="boolean">true</property>
-	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2;3,Point 3;4,Point 4;5,Point 5;6,Point 6;7,Point 7;8,Point 8;9,Point 9;10,Point 10;</property>
+	    <property id="WayPoints_List" type="string">0,Start;1,Point 1;2,Point 2;103,Point 3;204,Point 4;205,Point 5;506,Point 6;717,Point 7;829,Point 8;899,Point 9;999,Point 10;</property>
 	</properties>
 
 	<strings>
+    	<string id="App_Version_Title">Application Version</string>
     	<string id="DF_Title_Title">Data Field Title</string>
     	<string id="Set_RoadBook_Starting_Point_Title">Set Roadbook Starting Point</string>
 	    <string id="WayPoints_List_Title">WayPoints List</string>
 	</strings>
 	
 	<settings>
+	    <setting propertyKey="@Properties.App_Version" title="@Strings.App_Version_Title">
+    	    <settingConfig type="alphaNumeric" readonly="true" />
+    	</setting>
 	    <setting propertyKey="@Properties.DF_Title" title="@Strings.DF_Title_Title">
 	        <settingConfig type="alphaNumeric" readonly="true" />
 	    </setting>

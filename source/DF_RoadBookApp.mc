@@ -8,24 +8,32 @@ using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.Activity as Act;
 
+var AppVersion="1.14-01";
+
 class DF_RoadBookApp extends App.AppBase
 {
 	var WayPoint_Array;
 	var WayPoint_Number;
 	var Device_Type;
+	var deviceFamily;
 			
     function initialize()
     {
 		AppBase.initialize();
-		var DeviceSettings = System.getDeviceSettings();
 		
 		Device_Type = Ui.loadResource(Rez.Strings.Device);
-
 		System.println("Device Type = " + Device_Type);
+
+        deviceFamily = Toybox.WatchUi.loadResource(Rez.Strings.deviceFamily);
+        System.println("deviceFamily = " + deviceFamily);
+
+		var DeviceSettings = System.getDeviceSettings();
 		System.println("Device - Screen Height = " + DeviceSettings.screenHeight);
 		System.println("Device - Screen Width = " + DeviceSettings.screenWidth);
  		System.println("Device - Is Touchscreen = " + DeviceSettings.isTouchScreen);
 
+		WayPoint_Array = new [50];
+		/*
 		if (Device_Type.equals("edge_820"))
 		{
 			WayPoint_Array = new [50];
@@ -40,6 +48,7 @@ class DF_RoadBookApp extends App.AppBase
 		{
 			WayPoint_Array = new [50];
 		}
+		*/
 	}
 
     // onStart() is called on application start up

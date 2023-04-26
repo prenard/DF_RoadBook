@@ -4,7 +4,7 @@ using Toybox.Graphics as Gfx;
 
 class DF_RoadBookView extends Ui.DataField
 {
-	var My_App;
+	var app;
 		
 	var Max_Display_Line_Number = 0;
 	var Font_Type;
@@ -72,49 +72,65 @@ class DF_RoadBookView extends Ui.DataField
 
     function initialize()
     {
-       DataField.initialize();
+    	DataField.initialize();
 
-       My_App = App.getApp();
+    	app = App.getApp();
        
-       if (My_App.Device_Type.equals("edge_820"))
-       {
-       	Line_Separator_Y = 81;
-		First_Line_Y = 95;
+		if (app.deviceFamily.equals("rectangle-200x265"))
+       // edge_820    
+       	{
+       		Line_Separator_Y = 81;
+			First_Line_Y = 95;
 
-       	Max_Display_Line_Number = 5;
-		Font_Type = Gfx.FONT_LARGE;
-		Line_Height = 30;
-		X_Distance = 45;
-		X_Comment = 50;
-	   }
-	   else
-       if (My_App.Device_Type.equals("edge_1000"))
-       {
-       	Line_Separator_Y = 93;
-		First_Line_Y = 105;
+       		Max_Display_Line_Number = 5;
+			Font_Type = Gfx.FONT_LARGE;
+			Line_Height = 30;
+			X_Distance = 45;
+			X_Comment = 50;
+	   	}
+		else
+		if (app.deviceFamily.equals("rectangle-246x322"))
+		// edge_530
+		// edge_830
+		// edge_840
+       	{
+       		Line_Separator_Y = 93;
+			First_Line_Y = 100;
+
+       		Max_Display_Line_Number = 7;
+			Font_Type = Gfx.FONT_LARGE;
+			Line_Height = 30;
+			X_Distance = 55;
+			X_Comment = 60;
+	   	}
+		else
+		if (app.deviceFamily.equals("rectangle-240x400"))
+       	// edge_1000
+       	{
+       		Line_Separator_Y = 93;
+			First_Line_Y = 105;
 	
-       	Max_Display_Line_Number = 9;
-		Font_Type = Gfx.FONT_LARGE;
-		Line_Height = 30;
-		X_Distance = 45;
-		X_Comment = 50;
+	       	Max_Display_Line_Number = 9;
+			Font_Type = Gfx.FONT_LARGE;
+			Line_Height = 30;
+			X_Distance = 45;
+			X_Comment = 50;
+	   	}
+	   	else
+		if (app.deviceFamily.equals("rectangle-282x470"))
+       	// edge_1030
+       	{
+       		Line_Separator_Y = 105;
+			First_Line_Y = 115;
 
+       		Max_Display_Line_Number = 9;
+			Font_Type = Gfx.FONT_LARGE;
+			Line_Height = 35;
+			X_Distance = 60;
+			X_Comment = 65;
 	   }
-	   else
-       if (My_App.Device_Type.equals("edge_1030"))
-       {
-       	Line_Separator_Y = 105;
-		First_Line_Y = 115;
 
-       	Max_Display_Line_Number = 9;
-		Font_Type = Gfx.FONT_LARGE;
-		Line_Height = 35;
-		X_Distance = 60;
-		X_Comment = 65;
-
-	   }
-
-		//My_App.Generate_Waypoint_Array(Args);
+		//app.Generate_Waypoint_Array(Args);
 	    
 	    Power_AVG_Duration = 3;
 
@@ -401,14 +417,14 @@ class DF_RoadBookView extends Ui.DataField
 			
 		var WayPoint_Array_Idx = 0;
 		var Display_Line_Idx = 0;
-		while ( (Display_Line_Idx < Max_Display_Line_Number) and (WayPoint_Array_Idx < My_App.WayPoint_Number) )
+		while ( (Display_Line_Idx < Max_Display_Line_Number) and (WayPoint_Array_Idx < app.WayPoint_Number) )
 		{
 			//System.println("Display_Line_Idx = " + Display_Line_Idx);
 			//System.println("WayPoint_Array_Idx = " + WayPoint_Array_Idx);
-			if (My_App.WayPoint_Array[WayPoint_Array_Idx][0] >= Distance_Value - 2)
+			if (app.WayPoint_Array[WayPoint_Array_Idx][0] >= Distance_Value - 2)
 			{
-				dc.drawText(X_Distance, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, My_App.WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
-				dc.drawText(X_Comment, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, My_App.WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
+				dc.drawText(X_Distance, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, app.WayPoint_Array[WayPoint_Array_Idx][0].format("%.0f").toString(), Gfx.TEXT_JUSTIFY_RIGHT);
+				dc.drawText(X_Comment, First_Line_Y + Display_Line_Idx * Line_Height, Font_Type, app.WayPoint_Array[WayPoint_Array_Idx][1], Gfx.TEXT_JUSTIFY_LEFT);
 				Display_Line_Idx++;
 			}
 			WayPoint_Array_Idx++;

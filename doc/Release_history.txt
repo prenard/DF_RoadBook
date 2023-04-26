@@ -6,6 +6,14 @@ Format of way points list is:
 
 
 Release History:
+
+
+- V1.14-01 - 2023-04-26
+* Add Edge 540 support
+* Add Edge 840 support
+* Add Edge 1040 support
+* Implement CIQ SDK 4.24
+* Add Application Version support
 - V1.13 - 2018-03-28
 * Fix Edge 1030 display
 - V1.12 - 2018-03-28
